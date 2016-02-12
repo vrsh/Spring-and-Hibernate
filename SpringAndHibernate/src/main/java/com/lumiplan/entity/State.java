@@ -1,3 +1,4 @@
+
 package com.lumiplan.entity;
 
 import java.util.List;
@@ -10,14 +11,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 @Entity
+@Table (name="state")
 public class State {
 	@Id @GeneratedValue
+	@Column (name="State_id")
 	private int stateId;
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn (name = "CountryId")
+	@JoinColumn (name = "Country_id")
 	private Country country;
-	@Column (name = "StateName")
+	@Column (name = "State_name")
 	private String stateName;
 	@OneToMany(mappedBy = "state")
 	

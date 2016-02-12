@@ -7,13 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
-
+@Table (name="country")
 public class Country {
 	@Id @GeneratedValue 
+	@Column (name="Country_id")
 	private int countryId;
-	@Column (name = "CountryName")
+	@Column (name="Country_name")
 	private String countryName;
 	@OneToMany(mappedBy = "country")
 	private List<State> states;

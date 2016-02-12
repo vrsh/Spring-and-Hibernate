@@ -7,14 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 @Entity
+@Table (name="city")
 public class City {
 	@Id @GeneratedValue
+	@Column (name="City_id")
 	private int cityId;
-	@Column (name="CityName")
+	@Column (name="City_name")
 	private String cityName;
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn (name = "StateId")
+	@JoinColumn (name = "State_id")
 	private State state;
 	
 	public State getState(){
